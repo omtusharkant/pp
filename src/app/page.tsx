@@ -12,7 +12,7 @@ export default function Home() {
       <main className="bg-black pt-16">
         <section id="home" className="container mb-10 flex flex-col md:flex-row items-center space-y-10 md:space-y-0 md:space-x-8">
 
-        <Suspense fallback={<p>Loading feed...</p>}>
+        
           {/* Image */}
           <div className="w-full md:w-1/2 flex justify-center">
             <img
@@ -21,7 +21,7 @@ export default function Home() {
               className="w-full max-w-md mx-auto rounded-lg shadow-lg md:max-w-sm"
             />
           </div>
-          </Suspense>
+          
 
           {/* Text Content */}
           <div className="text-white flex flex-col justify-start w-full md:w-1/2">
