@@ -4,6 +4,7 @@
 
 import { FaFacebook, FaInstagram, FaBars } from "react-icons/fa";
 import { useState } from "react"; // import useState
+import Portfolio from "@/app/portfolio"
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State for menu toggle
@@ -27,10 +28,7 @@ const Header = () => {
             <a href="#home" className="text-white hover:text-gray-400">Home</a>
           </li>
           <li>
-            <a href="#about" className="text-white hover:text-gray-400">About</a>
-          </li>
-          <li>
-            <a href="#services" className="text-white hover:text-gray-400">Services</a>
+            <a href="/portfolio" className="text-white hover:text-gray-400">Portfolio</a>
           </li>
           <li>
             <a href="#contact" className="text-white hover:text-gray-400">Contact</a>
