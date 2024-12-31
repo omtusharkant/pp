@@ -4,7 +4,10 @@ import Header from '@/app/header';
 import Marquee from 'react-fast-marquee';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Portfolio from "@/app/portfolio"
+
+import About from "@/app/about"
+import Services from "@/app/services";
+import Contactus from "@/app/contactus";
 export default function Home() {
 
 
@@ -61,7 +64,9 @@ export default function Home() {
             </div>
           </Marquee>
         </section>
-
+        <About />
+        <Services />
+        <Contactus/>
       </main>
       
     </>

@@ -4,11 +4,16 @@
 
 import { FaFacebook, FaInstagram, FaBars } from "react-icons/fa";
 import { useState } from "react"; // import useState
-import Portfolio from "@/app/portfolio"
+
+import { useRouter } from "next/navigation";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State for menu toggle
+  const router = useRouter();
 
+  const portfolioredirect = () => {
+    router.push("/portfolio", undefined, { shallow: false, replace: true });
+  };
   return (
     <header className="bg-[rgb(0,0,3)] fixed top-0 w-full z-50">
       <nav className="container  mx-auto px-4 py-3 flex justify-between items-center">
@@ -28,7 +33,7 @@ const Header = () => {
             <a href="#home" className="text-white hover:text-gray-400">Home</a>
           </li>
           <li>
-            <a href="/portfolio" className="text-white hover:text-gray-400">Portfolio</a>
+            <a  href="/portfolio" className="text-white hover:text-gray-400">Portfolio</a>
           </li>
           <li>
             <a href="#contact" className="text-white hover:text-gray-400">Contact</a>
