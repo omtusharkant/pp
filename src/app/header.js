@@ -30,7 +30,7 @@ const Header = () => {
         {/* Navigation Menu */}
         <ul className={`md:flex space-x-6 justify-end md:items-center md:static absolute top-16 left-0 w-full md:w-auto bg-black-800 md:bg-transparent md:flex-row flex-col md:flex-row ${isMenuOpen ? 'block' : 'hidden'}`}>
           <li>
-            <a href="#home" className="text-white hover:text-gray-400">Home</a>
+            <a href="/" className="text-white hover:text-gray-400">Home</a>
           </li>
           <li>
             <a  href="/portfolio" className="text-white hover:text-gray-400">Portfolio</a>
@@ -40,7 +40,7 @@ const Header = () => {
           </li>
           <li>
             <a
-              href="https://facebook.com"
+              href="https://www.facebook.com/people/Pabitra-Photography/100072265877971/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-gray-400"
@@ -50,7 +50,7 @@ const Header = () => {
           </li>
           <li>
             <a
-              href="https://instagram.com"
+              href="https://www.instagram.com/pabitra__photography/"
               target="_blank"
               rel="noopener noreferrer"
               className="text-white hover:text-gray-400"
