@@ -1,19 +1,19 @@
 "use client";
-import { Suspense } from 'react';
+import React, { useState, useEffect } from 'react';
 import Header from '@/app/header';
 import Marquee from 'react-fast-marquee';
 import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+import LoadingS from "@/app/loading"
 import About from "@/app/about"
 import Clientsreview from "@/app/clientsreview";
 import Contactus from "@/app/contactus";
 export default function Home() {
-
+ 
 
   return (
     <>
-    
+      
       <main className="bg-black pt-16 custom-scrollbar">
       
       <Header />

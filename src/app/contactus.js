@@ -22,6 +22,9 @@ const Contactus = () => {
 
     return (
         <section id="contact" className="container mx-auto max-w-screen-xl mt-10 p-4">
+            <div className="flex flex-col items-center pb-4">
+        <h1 className="font-bold text-4xl creative-underline">Contact US</h1>
+    </div>
             <div className="flex flex-col md:flex-row gap-10 items-center">
                 {/* Image Content */}
                 <div className="text-white flex flex-col items-center md:items-start w-full md:w-1/2">

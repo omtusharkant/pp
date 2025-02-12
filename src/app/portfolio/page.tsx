@@ -23,10 +23,10 @@ const Portfolio: React.FC = () => {
     { id: 6, title: "", imageUrl: "https://imgur.com/fbUoy79.jpeg", category: "Ring ceremony", client: "Babu X Butteryfly" },
     { id: 7, title: "", imageUrl: "https://imgur.com/JWQDed2.jpeg", category: "Ring ceremony", client: "Babu X Butteryfly" },
     { id: 8, title: "", imageUrl: "https://imgur.com/jaN9gCj.jpeg", category: "Ring ceremony", client: "Babu X Butteryfly" },
-    { id: 10, title: "1", imageUrl: "https://imgur.com/hyMyukE.jpeg", category: "Prewedding", client: "Khirod X Chandana" },
-    { id: 12, title: "3", imageUrl: "https://imgur.com/SR7k7go.jpeg", category: "Prewedding", client: "Khirod X Chandana" },
-    { id: 13, title: "4", imageUrl: "https://imgur.com/S4Hhu8x.jpeg", category: "Prewedding", client: "Khirod X Chandana" },
-    { id: 14, title: "5", imageUrl: "https://imgur.com/3yqdDR1.jpeg", category: "Prewedding", client: "Khirod X Chandana" },
+    { id: 10, title: "1", imageUrl: "https://imgur.com/hyMyukE.jpeg", category: "Prewedding", client: "Khirod X Laxmipriya" },
+    { id: 12, title: "3", imageUrl: "https://imgur.com/SR7k7go.jpeg", category: "Prewedding", client: "Khirod X Laxmipriya" },
+    { id: 13, title: "4", imageUrl: "https://imgur.com/S4Hhu8x.jpeg", category: "Prewedding", client: "Khirod X Laxmipriya" },
+    { id: 14, title: "5", imageUrl: "https://imgur.com/3yqdDR1.jpeg", category: "Prewedding", client: "Khirod X Laxmipriya" },
  
   ];
   
@@ -56,7 +56,7 @@ const Portfolio: React.FC = () => {
     <>
       <Header />
       <div className="container mx-auto py-8">
-        <h1 className="text-4xl font-bold text-center mb-8 pb-4">| My Photos |</h1>
+        <h1 className="text-4xl font-bold text-center mb-8 pb-4">| Our Photos |</h1>
         <div className="flex justify-center mb-8 pb-4 pt-4 border-t-4 border-b-4 border-[#FFFFFF]">
           {categories.map(category => (
             <button
