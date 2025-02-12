@@ -19,7 +19,11 @@ const About = () => {
             About Pabitra Photography
           </h1>
           <p className="text-base md:text-lg mt-2 md:mt-4 text-center md:text-left">
-            Welcome to Pabitra Photography. Capturing moments that last a lifetime.
+          At Pabitra Photography, we believe in capturing the essence of life through the lens. With a passion for storytelling, we specialize in creating stunning, timeless images that celebrate moments of beauty, emotion, and connection. Our team is dedicated to preserving your most cherished memories, whether it’s a wedding, a family gathering, a professional portrait, or a special event.
+
+We take pride in our attention to detail and our ability to create an experience that makes every client feel at ease in front of the camera. Through a mix of candid shots and carefully composed photographs, we aim to tell your unique story with authenticity and artistry.
+
+Driven by creativity and a deep understanding of light, composition, and emotion, Pabitra Photography strives to exceed expectations, creating images that will be treasured for a lifetime. Whether you're looking for stunning portraits, captivating event photography, or beautiful wedding imagery, we’re here to make your moments unforgettable.
           </p>
         </div>
 
@@ -31,22 +35,22 @@ const About = () => {
             columnClassName="masonry-column"
           >
             <img
-              src="/home.jpg"
+              src="https://imgur.com/GXaT9MQ.jpeg"
               alt="Home"
               className="rounded-lg mb-4 grayscale hover:grayscale-0 hover:shadow-[5px_5px_rgba(0,_98,_90,_0.4),_10px_10px_rgba(0,_98,_90,_0.3),_15px_15px_rgba(0,_98,_90,_0.2),_20px_20px_rgba(0,_98,_90,_0.1),_25px_25px_rgba(0,_98,_90,_0.05)] transition-all duration-300"
             />
             <img
-              src="/car.jpg"
+              src="https://imgur.com/l5r5kCq.jpeg"
               alt="Car"
               className="rounded-lg mb-4 grayscale hover:grayscale-0 hover:shadow-[5px_5px_rgba(0,_98,_90,_0.4),_10px_10px_rgba(0,_98,_90,_0.3),_15px_15px_rgba(0,_98,_90,_0.2),_20px_20px_rgba(0,_98,_90,_0.1),_25px_25px_rgba(0,_98,_90,_0.05)] transition-all duration-300"
             />
             <img
-              src="/Harry stickers.jpg"
+              src="https://imgur.com/idU1A0a.jpeg"
               alt="Harry Stickers"
               className="rounded-lg mb-4 grayscale hover:grayscale-0 hover:shadow-[5px_5px_rgba(0,_98,_90,_0.4),_10px_10px_rgba(0,_98,_90,_0.3),_15px_15px_rgba(0,_98,_90,_0.2),_20px_20px_rgba(0,_98,_90,_0.1),_25px_25px_rgba(0,_98,_90,_0.05)] transition-all duration-300"
             />
             <img
-              src="/ㅐ.jpg"
+              src="https://imgur.com/03xDuBj.jpeg"
               alt="Image"
               className="rounded-lg mb-4 grayscale hover:grayscale-0 hover:shadow-[5px_5px_rgba(255,_8,_0,_1),_10px_10px_rgba(200,_98,_90,_0.9),_15px_15px_rgba(0,_98,_90,_0.2),_20px_20px_rgba(0,_98,_90,_0.1),_25px_25px_rgba(0,_98,_90,_0.05)] transition-all duration-300"
             />

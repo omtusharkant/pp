@@ -6,7 +6,7 @@ import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import About from "@/app/about"
-import Services from "@/app/services";
+import Clientsreview from "@/app/clientsreview";
 import Contactus from "@/app/contactus";
 export default function Home() {
 
@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <>
     
-      <main className="bg-black pt-16">
+      <main className="bg-black pt-16 custom-scrollbar">
       
       <Header />
       
@@ -24,7 +24,7 @@ export default function Home() {
           {/* Image */}
           <div className="w-full md:w-1/2 flex justify-center px-4 sm:px-2">
             <img
-              src="/home.jpg"
+              src="https://imgur.com/SM5vVbR.jpeg"
               alt="Home Image"
               className="w-full max-w-sm sm:max-w-xs rounded-lg shadow-lg transition-all duration-300"
             />
@@ -65,7 +65,7 @@ export default function Home() {
           </Marquee>
         </section>
         <About />
-        <Services />
+        <Clientsreview />
         <Contactus/>
       </main>
       
