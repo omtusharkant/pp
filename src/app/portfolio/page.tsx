@@ -23,10 +23,33 @@ const Portfolio: React.FC = () => {
     { id: 6, title: "", imageUrl: "https://imgur.com/fbUoy79.jpeg", category: "Ring ceremony", client: "Babu X Butteryfly" },
     { id: 7, title: "", imageUrl: "https://imgur.com/JWQDed2.jpeg", category: "Ring ceremony", client: "Babu X Butteryfly" },
     { id: 8, title: "", imageUrl: "https://imgur.com/jaN9gCj.jpeg", category: "Ring ceremony", client: "Babu X Butteryfly" },
-    { id: 10, title: "1", imageUrl: "https://imgur.com/hyMyukE.jpeg", category: "Prewedding", client: "Khirod X Laxmipriya" },
-    { id: 12, title: "3", imageUrl: "https://imgur.com/SR7k7go.jpeg", category: "Prewedding", client: "Khirod X Laxmipriya" },
-    { id: 13, title: "4", imageUrl: "https://imgur.com/S4Hhu8x.jpeg", category: "Prewedding", client: "Khirod X Laxmipriya" },
-    { id: 14, title: "5", imageUrl: "https://imgur.com/3yqdDR1.jpeg", category: "Prewedding", client: "Khirod X Laxmipriya" },
+    { id: 10, title: "", imageUrl: "https://imgur.com/hyMyukE.jpeg", category: "Prewedding", client: "Khirod X Laxmipriya" },
+    { id: 12, title: "", imageUrl: "https://imgur.com/SR7k7go.jpeg", category: "Prewedding", client: "Khirod X Laxmipriya" },
+    { id: 13, title: "", imageUrl: "https://imgur.com/S4Hhu8x.jpeg", category: "Prewedding", client: "Khirod X Laxmipriya" },
+    { id: 14, title: "", imageUrl: "https://imgur.com/3yqdDR1.jpeg", category: "Prewedding", client: "Khirod X Laxmipriya" },
+
+    { id: 15, title: "", imageUrl: "https://imgur.com/tl4EVvG.jpeg", category: "Wedding", client: "Nihar X Kiran" },
+    { id: 16, title: "", imageUrl: "https://imgur.com/tVrwJOS.jpeg", category: "Wedding", client: "Nihar X Kiran" },
+    { id: 17, title: "", imageUrl: "https://imgur.com/IwFvkra.jpeg", category: "Wedding", client: "Nihar X Kiran" },
+    { id: 18, title: "", imageUrl: "https://imgur.com/V7qrE5T.jpeg", category: "Wedding", client: "Nihar X Kiran" },
+    { id: 19, title: "", imageUrl: "https://imgur.com/kxnsqik.jpeg", category: "Wedding", client: "Nihar X Kiran" },
+    { id: 20, title: "", imageUrl: "https://imgur.com/x4DI2Dg.jpeg", category: "Wedding", client: "Nihar X Kiran" },
+    { id: 21, title: "", imageUrl: "https://imgur.com/KFKvRsF.jpeg", category: "Wedding", client: "Nihar X Kiran" },
+    { id: 22, title: "", imageUrl: "https://imgur.com/1FVFfjV.jpeg", category: "Wedding", client: "Nihar X Kiran" },
+
+    { id: 23, title: "", imageUrl: "https://imgur.com/30HLacY.jpeg", category: "Prewedding", client: "Suman X Sweta" },
+    { id: 24, title: "", imageUrl: "https://imgur.com/u5POqWJ.jpeg", category: "Prewedding", client: "Suman X Sweta" },
+    { id: 25, title: "", imageUrl: "https://imgur.com/aLzDqFm.jpeg", category: "Prewedding", client: "Suman X Sweta" },
+    { id: 26, title: "", imageUrl: "https://imgur.com/og3LYlU.jpeg", category: "Prewedding", client: "Suman X Sweta" },
+    { id: 27, title: "", imageUrl: "https://imgur.com/Rj40y3X.jpeg", category: "Prewedding", client: "Suman X Sweta" },
+    { id: 28, title: "", imageUrl: "https://imgur.com/1AMU2s1.jpeg", category: "Prewedding", client: "Suman X Sweta" },
+    { id: 29, title: "", imageUrl: "https://imgur.com/s11U6S8.jpeg", category: "Prewedding", client: "Suman X Sweta" },
+    { id: 30, title: "", imageUrl: "https://imgur.com/6ibXrPi.jpeg", category: "Prewedding", client: "Suman X Sweta" },
+    { id: 31, title: "", imageUrl: "https://imgur.com/W8owOAq.jpeg", category: "Prewedding", client: "Suman X Sweta" },
+    { id: 32, title: "", imageUrl: "https://imgur.com/5DCsBwk.jpeg", category: "Prewedding", client: "Suman X Sweta" },
+    { id: 33, title: "", imageUrl: "https://imgur.com/CU83yFz.jpeg", category: "Prewedding", client: "Suman X Sweta" },
+
+    
  
   ];
   
