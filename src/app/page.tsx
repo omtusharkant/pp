@@ -8,6 +8,8 @@ import LoadingS from "@/app/loading"
 import About from "@/app/about"
 import Clientsreview from "@/app/clientsreview";
 import Contactus from "@/app/contactus";
+import Image from "next/image";
+
 export default function Home() {
  
 
@@ -20,17 +22,19 @@ export default function Home() {
       
         <section id="home" className="container mb-10 flex flex-col md:flex-row items-center space-y-10 md:space-y-0 md:space-x-8">
         
-
-          {/* Image */}
+          {/* Image - Fixed layout shift with explicit dimensions and aspect ratio */}
           <div className="w-full md:w-1/2 flex justify-center px-4 sm:px-2">
-            <img
-              src="https://imgur.com/SM5vVbR.jpeg"
-              alt="Home Image"
-              className="w-full max-w-sm sm:max-w-xs rounded-lg shadow-lg transition-all duration-300"
-            />
+            <div className="relative w-full max-w-sm sm:max-w-xs aspect-[3/4] min-h-[300px]">
+              <img
+                src="https://imgur.com/SM5vVbR.jpeg"
+                alt="Home Image"
+                width={400}
+                height={533}
+                loading="eager"
+                className="w-full h-full object-cover rounded-lg shadow-lg transition-all duration-300"
+              />
+            </div>
           </div>
-
-
 
           {/* Text Content */}
           <div className="text-white flex flex-col justify-start w-full md:w-1/2 px-4 md:px-0">
