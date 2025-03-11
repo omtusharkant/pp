@@ -47,7 +47,7 @@ export default function Home() {
             <div className="mt-4 text-sm md:text-base text-gray-300">
               <p>✓ Professional Wedding Photography</p>
               <p>✓ Portrait & Family Photography</p>
-              <p>✓ Commercial & Product Photography</p>
+              
               <p>✓ Event Coverage</p>
               <p>✓ Studio Photography</p>
             </div>

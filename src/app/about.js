@@ -13,10 +13,10 @@ const About = () => {
   
   // Define image dimensions to prevent layout shifts
   const imageData = [
-    { src: "https://imgur.com/GXaT9MQ.jpeg", alt: "Home", width: 600, height: 400 },
-    { src: "https://imgur.com/l5r5kCq.jpeg", alt: "Car", width: 600, height: 400 },
-    { src: "https://imgur.com/idU1A0a.jpeg", alt: "Harry Stickers", width: 600, height: 400 },
-    { src: "https://imgur.com/03xDuBj.jpeg", alt: "Image", width: 600, height: 400 }
+    { src: "https://imgur.com/GXaT9MQ.jpeg", alt: "Couple", width: 600, height: 400 },
+    { src: "https://imgur.com/l5r5kCq.jpeg", alt: "prewedding", width: 600, height: 400 },
+    { src: "https://imgur.com/idU1A0a.jpeg", alt: "beach photography", width: 600, height: 400 },
+    { src: "https://imgur.com/03xDuBj.jpeg", alt: "beach shoot", width: 600, height: 400 }
   ];
   
   return (
@@ -28,11 +28,9 @@ const About = () => {
             About Pabitra Photography
           </h1>
           <p className="text-base md:text-lg mt-2 md:mt-4 text-center md:text-left">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At Pabitra Photography, we believe in capturing the essence of life through the lens. As one of Berhampur's best photographers, we specialize in creating stunning, timeless images that celebrate moments of beauty, emotion, and connection. With a passion for storytelling, our team is dedicated to preserving your most cherished memories, whether it's a wedding, a family gathering, a professional portrait, or a special event in Berhampur.
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At Pabitra Photography, we capture life's precious moments with artistry and passion. As Berhampur's premier photography studio, we specialize in creating timeless images for weddings, family gatherings, professional portraits, and special events. Our team excels in both candid and composed shots, ensuring every client feels comfortable while we tell their unique story through our lens.
 
-        We take pride in our attention to detail and our ability to create an experience that makes every client feel at ease in front of the camera. Through a mix of candid shots and carefully composed photographs, we aim to tell your unique story with authenticity and artistry.
-
-        Driven by creativity and a deep understanding of light, composition, and emotion, Pabitra Photography strives to exceed expectations, creating images that will be treasured for a lifetime. Whether you're looking for stunning portraits, captivating event photography, or beautiful wedding imagery in Berhampur, we're here to make your moments unforgettable.
+        With our expertise in lighting, composition, and emotional storytelling, we create lasting memories that exceed expectations. From stunning portraits to captivating event coverage in Berhampur, we're dedicated to making your special moments truly unforgettable.
     </p>
           
         </div>
@@ -47,16 +45,16 @@ const About = () => {
             {imageData.map((img, index) => (
               <div 
                 key={index} 
-                className="relative mb-4 aspect-[3/2] w-full overflow-hidden"
-                style={{ minHeight: '200px' }}
+                className="relative mb-4"
+                style={{ 
+                  width: '100%',
+                  
+                }}
               >
-                {/* Using regular img tag with explicit dimensions since Next.js Image has issues with Masonry layouts */}
                 <img
                   src={img.src}
                   alt={img.alt}
-                  width={img.width}
-                  height={img.height}
-                  loading="eager" 
+                  
                   className="rounded-lg w-full h-full object-cover grayscale hover:grayscale-0 hover:shadow-[5px_5px_rgba(255,_8,_0,_1),_10px_10px_rgba(200,_98,_90,_0.9),_15px_15px_rgba(0,_98,_90,_0.2),_20px_20px_rgba(0,_98,_90,_0.1),_25px_25px_rgba(0,_98,_90,_0.05)] transition-all duration-300"
                 />
               </div>

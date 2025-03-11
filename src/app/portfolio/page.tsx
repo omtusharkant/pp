@@ -2,6 +2,16 @@
 
 import React, { useState } from "react";
 import Header from '@/app/header';
+import Image from "next/image";
+
+// Add loading animation component
+const LoadingShimmer = () => (
+  <div className="animate-pulse">
+    <div className="w-full h-full bg-gradient-to-r from-gray-800 via-gray-600 to-gray-800 rounded-xl">
+      <div className="w-full h-full animate-shimmer bg-gradient-to-r from-transparent via-gray-500/20 to-transparent"></div>
+    </div>
+  </div>
+);
 
 interface Photo {
   id: number;
@@ -76,45 +86,62 @@ const Portfolio: React.FC = () => {
   }, {} as { [key: string]: { [key: string]: Photo[] } });
 
   return (
-    <>
+    <div className="min-h-screen bg-black-50">
       <Header />
-      <div className="container mx-auto py-8">
-        <h1 className="text-4xl font-bold text-center mb-8 pb-4">| Our Photos |</h1>
-        <div className="flex justify-center mb-8 pb-4 pt-4 border-t-4 border-b-4 border-[#FFFFFF]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <h1 className="text-5xl font-bold text-center mb-12 text-gray-100">Portfolio</h1>
+        
+        {/* Category Navigation */}
+        <div className="flex flex-wrap justify-center gap-4 mb-12">
           {categories.map(category => (
             <button
               key={category}
-              className={`mx-2 px-4 py-2 border-b-2 transition-transform duration-300 ease-in-out transform hover:scale-105 ${activeCategory === category
-                  ? "bg-black-500 text-white rounded-lg border-t-2 border-l-2 border-r-2 border-[#FFFFFF]"
-                  : "bg-black-200 text-gray-700 rounded-sm border-gray-400"
-                }`}
               onClick={() => setActiveCategory(category)}
+              className={`
+                px-6 py-3 text-sm font-medium rounded-full transition-all duration-300
+                ${activeCategory === category
+                  ? "bg-white text-black shadow-lg transform scale-105"
+                  : "bg-black text-gray-600 hover:bg-gray-100 border border-gray-200"
+                }
+              `}
             >
               {category}
             </button>
           ))}
         </div>
 
-        <div className="flex flex-wrap p-6 gap-6 justify-center max-w-screen mx-8 mr-8 bg-black-100 overflow-x-auto custom-scrollbar">
+        {/* Photo Grid */}
+        <div className="space-y-16">
           {Object.keys(groupedPhotosByCategory).map((categoryName) => (
             activeCategory === categoryName && (
-              <div key={categoryName} className="py-4 w-full">
+              <div key={categoryName}>
                 {Object.keys(groupedPhotosByCategory[categoryName]).map((clientName) => (
-                  <div key={clientName} className="py-4">
-                    <h3 className="text-2xl font-semibold text-center mb-4 relative">
-                      <div className="absolute bottom-0 left-0 right-0 mx-auto border-t-2 border-gray-300"></div>
-                      {clientName}
-                    </h3>
-                    <div className="relative flex flex-1 space-x-5 overflow-x-auto max-h-96 custom-scrollbar">
-                      {groupedPhotosByCategory[categoryName][clientName].map((photo) => (
-                        <div key={photo.id} className="flex-shrink-0">
-                          <img
-                            src={`${photo.imageUrl}?w=500&h=300&fit=crop`}
-                            alt={photo.title}
-                            className="w-full h-48 rounded-lg object-cover"
-                            loading="lazy"
-                            onClick={() => handlePhotoClick(photo)}
+                  <div key={clientName} className="mb-16">
+                    <div className="flex items-center mb-8">
+                      <h2 className="text-3xl font-semibold text-gray-800">{clientName}</h2>
+                      <div className="flex-grow ml-4 h-px bg-gray-200"></div>
+                    </div>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                      {groupedPhotosByCategory[categoryName][clientName].map((photo, index) => (
+                        <div
+                          key={photo.id}
+                          className="group relative aspect-[4/3] overflow-hidden rounded-xl shadow-md transition-transform duration-300 hover:scale-[1.02]"
+                          onClick={() => handlePhotoClick(photo)}
+                        >
+                          <div className="absolute inset-0 z-0">
+                            <LoadingShimmer />
+                          </div>
+                          <Image
+                            src={photo.imageUrl}
+                            alt={photo.title || "Portfolio image"}
+                            fill
+                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                            className="object-cover transition-transform duration-300 group-hover:scale-110 z-10 relative"
+                            priority={index < 6}
+                            quality={75}
+                            loading={index < 6 ? "eager" : "lazy"}
                           />
+                          <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 z-20"></div>
                         </div>
                       ))}
                     </div>
@@ -125,41 +152,48 @@ const Portfolio: React.FC = () => {
           ))}
         </div>
 
+        {/* Modal */}
         {selectedPhoto && (
-          <div className="fixed inset-0 bg-red bg-opacity-50 flex items-center w-full justify-center z-50" onClick={closeModal}>
-            <div className="bg-white text-black p-6 rounded-lg relative" onClick={(e) => e.stopPropagation()}>
-            
-<button onClick={closeModal}
-  className="relative border-2 border-black group hover:border-green-500 w-5 h-5 duration-500 overflow-hidden"
-  type="button"
->
-  <p
-    className="font-Manrope text-3xl h-full w-full flex items-center justify-center text-black duration-500 relative z-10 group-hover:scale-0"
-  >
-    ×
-  </p>
-  <span
-    className="absolute w-full h-full bg-green-500 rotate-45 group-hover:top-9 duration-500 top-12 left-0"
-  ></span>
-  <span
-    className="absolute w-full h-full bg-green-500 rotate-45 top-0 group-hover:left-9 duration-500 left-12"
-  ></span>
-  <span
-    className="absolute w-full h-full bg-green-500 rotate-45 top-0 group-hover:right-9 duration-500 right-12"
-  ></span>
-  <span
-    className="absolute w-full h-full bg-green-500 rotate-45 group-hover:bottom-9 duration-500 bottom-12 right-0"
-  ></span>
-</button>
-
-              
-              <img src={selectedPhoto.imageUrl} alt={selectedPhoto.title} className="max-w-md rounded-lg" />
-              <h2 className="mt-4 text-xl text-center">{selectedPhoto.title}</h2>
+          <div 
+            className="fixed inset-0 bg-black bg-opacity-90 flex items-center justify-center z-50 p-4 overflow-y-auto"
+            onClick={closeModal}
+          >
+            <div 
+              className="relative max-w-5xl w-full bg-transparent my-8"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={closeModal}
+                className="fixed top-4 right-4 z-50 bg-black bg-opacity-50 rounded-full p-2 text-white hover:text-gray-300 transition-colors duration-200"
+              >
+                <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+              <div className="flex justify-center items-center min-h-[200px] relative w-full h-[85vh]">
+                <div className="absolute inset-0 z-0">
+                  <LoadingShimmer />
+                </div>
+                <Image
+                  src={selectedPhoto.imageUrl}
+                  alt={selectedPhoto.title || "Portfolio image"}
+                  fill
+                  sizes="100vw"
+                  className="max-h-[85vh] w-auto max-w-full rounded-lg shadow-2xl object-contain z-10 relative"
+                  priority={true}
+                  quality={90}
+                />
+              </div>
+              {selectedPhoto.title && (
+                <div className="mt-4 text-center">
+                  <h2 className="text-xl text-white">{selectedPhoto.title}</h2>
+                </div>
+              )}
             </div>
           </div>
         )}
       </div>
-    </>
+    </div>
   );
 };
 
