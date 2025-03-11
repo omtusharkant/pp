@@ -17,8 +17,16 @@ const geistMono = Geist_Mono({
 });
 
 const metadata: Metadata = {
-  title: "Pp",
-  description: "A team to capture your smile",
+  title: "Best Photography Studio in Berhampur | Professional Photo & Video Services",
+  description: "Premier photography studio in Berhampur offering professional photo shoots, wedding photography, portrait sessions, and commercial photography. Capture your precious moments with our expert photographers.",
+  keywords: "Berhampur photo studio, best photography in Berhampur, wedding photographer Berhampur, professional photography studio, portrait photography, commercial photography, photo studio near me, Odisha photography",
+  openGraph: {
+    title: "Best Photography Studio in Berhampur | Professional Photo Services",
+    description: "Premier photography studio in Berhampur offering professional photo shoots, wedding photography, portrait sessions, and commercial photography.",
+    type: "website",
+    locale: "en_IN",
+    siteName: "PP Photography Studio Berhampur"
+  },
 };
 
 

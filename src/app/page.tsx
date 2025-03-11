@@ -27,7 +27,7 @@ export default function Home() {
             <div className="relative w-full max-w-sm sm:max-w-xs aspect-[3/4] min-h-[300px]">
               <img
                 src="https://imgur.com/SM5vVbR.jpeg"
-                alt="Home Image"
+                alt="Best Photography Studio in Berhampur - Professional Photo Services by Pabitra Photography"
                 width={400}
                 height={533}
                 loading="eager"
@@ -39,30 +39,36 @@ export default function Home() {
           {/* Text Content */}
           <div className="text-white flex flex-col justify-start w-full md:w-1/2 px-4 md:px-0">
             <h1 className="text-2xl md:text-4xl font-bold text-center md:text-left">
-              Pabitra Photography
+              Berhampur's Premier Photography Studio | Pabitra Photography
             </h1>
             <p className="text-base md:text-lg mt-2 md:mt-4 text-center md:text-left">
-              Welcome to Pabitra Photography. Capturing moments that last a lifetime.
+              Welcome to Pabitra Photography, Berhampur's leading professional photo studio. We specialize in wedding photography, portrait sessions, commercial shoots, and capturing life's precious moments with artistic excellence.
             </p>
+            <div className="mt-4 text-sm md:text-base text-gray-300">
+              <p>✓ Professional Wedding Photography</p>
+              <p>✓ Portrait & Family Photography</p>
+              <p>✓ Commercial & Product Photography</p>
+              <p>✓ Event Coverage</p>
+              <p>✓ Studio Photography</p>
+            </div>
           </div>
 
         </section>
 
         {/* Marquee Section */}
-        <section className="bg-white ">
+        <section className="bg-white" aria-label="Featured Services">
           <Marquee>
             <div className="text-black text-center flex justify-center p-2 space-x-4">
               {Array(9).fill(null).map((_, index) => (
-                <span key={index} className="font-medium text-3xl flex  items-center">
-                  {/* Wrapping Lottie animation with a div to control size */}
-                  <div className="w-20 h-20"> {/* Adjust size here */}
+                <span key={index} className="font-medium text-3xl flex items-center">
+                  <div className="w-20 h-20">
                     <DotLottieReact
                       src="https://lottie.host/389f49d9-f1c0-4c6c-88c1-969a1dfc2e6e/vtyYNdN8tO.lottie"
                       loop
                       autoplay
                     />
                   </div>
-                  Capture your moments
+                  Professional Photography Services in Berhampur
                 </span>
               ))}
             </div>
