@@ -3,6 +3,12 @@
 import { useState } from "react"; // import useState
 import Masonry from "react-masonry-css";
 import Image from "next/image";
+import dynamic from 'next/dynamic'
+
+const DynamicMarquee = dynamic(() => import('react-fast-marquee'), {
+  ssr: false,
+  loading: () => <p>Loading...</p>
+})
 
 const About = () => {
   const breakpointColumnsObj = {
@@ -28,7 +34,7 @@ const About = () => {
             About Pabitra Photography
           </h1>
           <p className="text-base md:text-lg mt-2 md:mt-4 text-center md:text-left">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;At Pabitra Photography, we capture life's precious moments with artistry and passion. As Berhampur's premier photography studio, we specialize in creating timeless images for weddings, family gatherings, professional portraits, and special events. Our team excels in both candid and composed shots, ensuring every client feels comfortable while we tell their unique story through our lens.
+        At Pabitra Photography, we capture life's precious moments with artistry and passion. As Berhampur's premier photography studio, we specialize in creating timeless images for weddings, family gatherings, professional portraits, and special events. Our team excels in both candid and composed shots, ensuring every client feels comfortable while we tell their unique story through our lens.
 
         With our expertise in lighting, composition, and emotional storytelling, we create lasting memories that exceed expectations. From stunning portraits to captivating event coverage in Berhampur, we're dedicated to making your special moments truly unforgettable.
     </p>

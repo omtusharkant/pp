@@ -38,24 +38,24 @@ export default function RootLayout({
 }>) {
   const [loading, setLoading] = useState(true);
   
-    useEffect(() => {
-      // Simulate a delay for demonstration purposes
-      setTimeout(() => {
-        setLoading(false);
-      }, 2000); // Change this value to control the loading animation duration
-    }, []);
+  useEffect(() => {
+    // Use requestIdleCallback for non-critical initialization
+    const handler = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
+    handler(() => {
+      setLoading(false);
+    });
+  }, []);
+
   return (
     <html lang="en">
       <body
-       className={`${geistSans.variable} ${geistMono.variable} antialiased custom-scrollbar bg-black text-white `}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased custom-scrollbar bg-black text-white`}
       >
-        {loading && <LoadingS />}
-              {!loading && (
-        
-        <main className="bg-black pt-16">
-          {children}
-        </main>
-              )}
+        {loading ? (
+          <LoadingS />
+        ) : (
+          <main className="bg-black pt-16">{children}</main>
+        )}
       </body>
     </html>
   );
