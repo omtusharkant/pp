@@ -39,10 +39,10 @@ export default function Home() {
           {/* Text Content */}
           <div className="text-white flex flex-col justify-start w-full md:w-1/2 px-4 md:px-0">
             <h1 className="text-2xl md:text-4xl font-bold text-center md:text-left">
-              Berhampur's Premier Photography Studio | Pabitra Photography
+            Pabitra Photography
             </h1>
             <p className="text-base md:text-lg mt-2 md:mt-4 text-center md:text-left">
-              Welcome to Pabitra Photography, Berhampur's leading professional photo studio. We specialize in wedding photography, portrait sessions, commercial shoots, and capturing life's precious moments with artistic excellence.
+              Welcome to Pabitra Photography, Berhampur's leading professional photo studio. We specialize in wedding photography, portrait sessions, and capturing life's precious moments with artistic excellence.
             </p>
             <div className="mt-4 text-sm md:text-base text-gray-300">
               <p>✓ Professional Wedding Photography</p>

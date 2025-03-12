@@ -25,7 +25,7 @@ const Contactus = () => {
 
     const sendmsg = () => {
         const encodedMessage = encodeURIComponent(message);
-        const url = `https://wa.me/+917605931480?text=${encodedMessage}`;
+        const url = `https://wa.me/+919777421390?text=${encodedMessage}`;
         window.open(url, "_blank");
     };
 
@@ -44,7 +44,7 @@ const Contactus = () => {
                 <div className="text-white flex flex-col items-center md:items-start w-full md:w-1/2">
                     <div className="relative w-full aspect-[3/2] min-h-[300px]">
                         <img
-                            src="/ㅐ.jpg"
+                            src="https://imgur.com/VbjTtmW.jpeg"
                             alt="Contact Image"
                             width={imageDimensions.width}
                             height={imageDimensions.height}
