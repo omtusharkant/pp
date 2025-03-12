@@ -20,15 +20,11 @@ export const metadata: Metadata = {
   icons: {
     icon: [
       {
-        url: "/favicon.ico",
+        url: "/logo.ico",
         sizes: "any",
         type: "image/x-icon",
       },
-      {
-        url: "https://imgur.com/SM5vVbR.jpeg",
-        sizes: "32x32",
-        type: "image/jpeg",
-      },
+      
     ],
     shortcut: [
       {
