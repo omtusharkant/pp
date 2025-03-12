@@ -57,15 +57,20 @@ export default function Home() {
 
         {/* Marquee Section */}
         <section className="bg-white" aria-label="Featured Services">
-          <Marquee>
+          <Marquee speed={40} gradientWidth={50}>
             <div className="text-black text-center flex justify-center p-2 space-x-4">
-              {Array(9).fill(null).map((_, index) => (
+              {Array(3).fill(null).map((_, index) => (
                 <span key={index} className="font-medium text-3xl flex items-center">
                   <div className="w-20 h-20">
                     <DotLottieReact
                       src="https://lottie.host/389f49d9-f1c0-4c6c-88c1-969a1dfc2e6e/vtyYNdN8tO.lottie"
                       loop
                       autoplay
+                      rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
+                      style={{ width: '100%', height: '100%' }}
+                      onLoad={() => {
+                        // Add any onLoad handling if needed
+                      }}
                     />
                   </div>
                   Professional Photography Services in Berhampur

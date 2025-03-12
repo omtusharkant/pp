@@ -24,7 +24,7 @@ const Clientsreview = () => {
             <section className="bg-white">
                 <Marquee speed={50} gradient={true} gradientWidth={50}>
                     <div className="text-black text-center flex justify-center p-2 space-x-4">
-                        {Array(4).fill(null).map((_, index) => (
+                        {Array(2).fill(null).map((_, index) => (
                             <span key={index} className="font-medium text-3xl flex items-center">
                                 <div className="w-20 h-20">
                                     <DotLottieReact

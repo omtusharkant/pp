@@ -1,6 +1,6 @@
 "use client"; // Add this directive
 
-import React, { useState } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import Header from '@/app/header';
 import Image from "next/image";
 
@@ -24,6 +24,14 @@ interface Photo {
 const Portfolio: React.FC = () => {
   const [selectedPhoto, setSelectedPhoto] = useState<Photo | null>(null);
   const [activeCategory, setActiveCategory] = useState<string>("Prewedding");
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    // Reset loading state when category changes
+    setIsLoading(true);
+    const timer = setTimeout(() => setIsLoading(false), 100);
+    return () => clearTimeout(timer);
+  }, [activeCategory]);
 
   const photos: Photo[] = [
     { id: 2, title: "", imageUrl: "https://imgur.com/sNt6IL0.jpeg", category: "Ring ceremony", client: "Babu X Butteryfly" },
@@ -85,6 +93,12 @@ const Portfolio: React.FC = () => {
     return acc;
   }, {} as { [key: string]: { [key: string]: Photo[] } });
 
+  // Memoize photos filtering to prevent unnecessary recalculations
+  const filteredPhotos = useMemo(() => 
+    photos.filter(photo => photo.category === activeCategory),
+    [activeCategory]
+  );
+
   return (
     <div className="min-h-screen bg-black-50">
       <Header />
@@ -128,21 +142,25 @@ const Portfolio: React.FC = () => {
                           className="group relative aspect-[4/3] overflow-hidden rounded-xl shadow-md transition-transform duration-300 hover:scale-[1.02]"
                           onClick={() => handlePhotoClick(photo)}
                         >
-                          <div className="absolute inset-0 z-0">
-                            <LoadingShimmer />
-                          </div>
-                          <Image
-                            src={photo.imageUrl}
-                            alt={photo.title || "Portfolio image"}
-                            fill
-                            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                            className="object-cover transition-transform duration-300 group-hover:scale-110 z-10 relative"
-                            priority={index < 4}
-                            quality={75}
-                            loading={index < 4 ? "eager" : "lazy"}
-                            placeholder="blur"
-                            blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/4gHYSUNDX1BST0ZJTEUAAQEAAAHIAAAAAAQwAABtbnRyUkdCIFhZWiAH4AABAAEAAAAAAABhY3NwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA9tYAAQAAAADTLQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAlkZXNjAAAA8AAAACRyWFlaAAABFAAAABRnWFlaAAABKAAAABRiWFlaAAABPAAAABR3dHB0AAABUAAAABRyVFJDAAABZAAAAChnVFJDAAABZAAAAChiVFJDAAABZAAAAChjcHJ0AAABjAAAADxtbHVjAAAAAAAAAAEAAAAMZW5VUwAAAAgAAAAcAHMAUgBHAEJYWVogAAAAAAAAb6IAADj1AAADkFhZWiAAAAAAAABimQAAt4UAABjaWFlaIAAAAAAAACSgAAAPhAAAts9YWVogAAAAAAAA9tYAAQAAAADTLXBhcmEAAAAAAAQAAAACZmYAAPKnAAANWQAAE9AAAApbAAAAAAAAAABtbHVjAAAAAAAAAAEAAAAMZW5VUwAAACAAAAAcAEcAbwBvAGcAbABlACAASQBuAGMALgAgADIAMAAxADb/2wBDABQODxIPDRQSEBIXFRQdHx4eHRoaHSQtJSEkLzYxMC8vMTQ3PEFGODlLPSw/RWlES1NWW1xfVENXZWZsaWdJW1P/2wBDARUXFyAeIBohHiA1LTQtNVFTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1NTU1P/wAARCAAIAAoDASIAAhEBAxEB/8QAFQABAQAAAAAAAAAAAAAAAAAAAAb/xAAUEAEAAAAAAAAAAAAAAAAAAAAA/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAX/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCdABmX/9k="
-                          />
+                          {isLoading ? (
+                            <div className="absolute inset-0 z-0">
+                              <LoadingShimmer />
+                            </div>
+                          ) : (
+                            <Image
+                              src={photo.imageUrl}
+                              alt={photo.title || "Portfolio image"}
+                              fill
+                              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                              className="object-cover transition-transform duration-300 group-hover:scale-110 z-10 relative"
+                              priority={index < 2} // Only prioritize first 2 images
+                              quality={75}
+                              loading={index < 2 ? "eager" : "lazy"}
+                              onLoad={() => {
+                                if (index < 2) setIsLoading(false);
+                              }}
+                            />
+                          )}
                           <div className="absolute inset-0 bg-black bg-opacity-0 group-hover:bg-opacity-30 transition-opacity duration-300 z-20"></div>
                         </div>
                       ))}

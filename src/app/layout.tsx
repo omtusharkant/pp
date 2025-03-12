@@ -39,11 +39,14 @@ export default function RootLayout({
   const [loading, setLoading] = useState(true);
   
   useEffect(() => {
-    // Use requestIdleCallback for non-critical initialization
-    const handler = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
-    handler(() => {
-      setLoading(false);
-    });
+    // Defer non-critical initialization
+    if (typeof window !== 'undefined') {
+      // Use requestIdleCallback for non-critical initialization
+      const handler = window.requestIdleCallback || ((cb) => setTimeout(cb, 1));
+      handler(() => {
+        setLoading(false);
+      });
+    }
   }, []);
 
   return (
