@@ -51,6 +51,14 @@ export default function RootLayout({
 
   return (
     <html lang="en">
+      <head>
+        <link
+          rel="preload"
+          as="image"
+          href="https://imgur.com/SM5vVbR.jpeg"
+          fetchPriority="high"
+        />
+      </head>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased custom-scrollbar bg-black text-white`}
       >
