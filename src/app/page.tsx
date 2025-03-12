@@ -66,10 +66,10 @@ export default function Home() {
                       src="https://lottie.host/389f49d9-f1c0-4c6c-88c1-969a1dfc2e6e/vtyYNdN8tO.lottie"
                       loop
                       autoplay
-                      rendererSettings={{ preserveAspectRatio: 'xMidYMid slice' }}
-                      style={{ width: '100%', height: '100%' }}
-                      onLoad={() => {
-                        // Add any onLoad handling if needed
+                      style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'contain'
                       }}
                     />
                   </div>
