@@ -14,9 +14,44 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Best Photography Studio in Berhampur | Professional Photo & Video Services",
+  title: "Pabitra Photography | Professional Photo & Video Services",
   description: "Premier photography studio in Berhampur offering professional photo shoots, wedding photography, portrait sessions, and commercial photography. Capture your precious moments with our expert photographers.",
   keywords: "Berhampur photo studio, best photography in Berhampur, wedding photographer Berhampur, professional photography studio, portrait photography, commercial photography, photo studio near me, Odisha photography",
+  icons: {
+    icon: [
+      {
+        url: "/favicon.ico",
+        sizes: "any",
+        type: "image/x-icon",
+      },
+      {
+        url: "https://imgur.com/SM5vVbR.jpeg",
+        sizes: "32x32",
+        type: "image/jpeg",
+      },
+    ],
+    shortcut: [
+      {
+        url: "https://imgur.com/SM5vVbR.jpeg",
+        sizes: "196x196",
+        type: "image/jpeg",
+      }
+    ],
+    apple: [
+      {
+        url: "https://imgur.com/SM5vVbR.jpeg",
+        sizes: "180x180",
+        type: "image/jpeg",
+      }
+    ],
+    other: [
+      {
+        rel: "mask-icon",
+        url: "https://imgur.com/SM5vVbR.jpeg",
+      }
+    ]
+  },
+  manifest: "/manifest.json",
   openGraph: {
     title: "Best Photography Studio in Berhampur | Professional Photo Services",
     description: "Premier photography studio in Berhampur offering professional photo shoots, wedding photography, portrait sessions, and commercial photography.",
@@ -37,10 +72,6 @@ export const metadata: Metadata = {
     title: "Best Photography Studio in Berhampur | Professional Photo Services",
     description: "Premier photography studio in Berhampur offering professional photo shoots, wedding photography, portrait sessions, and commercial photography.",
     images: ["https://imgur.com/SM5vVbR.jpeg"]
-  },
-  icons: {
-    icon: "https://imgur.com/SM5vVbR.jpeg",
-    apple: "https://imgur.com/SM5vVbR.jpeg"
   }
 };
 
@@ -57,6 +88,23 @@ export default function RootLayout({
           as="image"
           href="https://imgur.com/SM5vVbR.jpeg"
           fetchPriority="high"
+        />
+        <link
+          rel="icon"
+          type="image/jpeg"
+          sizes="32x32"
+          href="https://imgur.com/SM5vVbR.jpeg"
+        />
+        <link
+          rel="icon"
+          type="image/jpeg"
+          sizes="196x196"
+          href="https://imgur.com/SM5vVbR.jpeg"
+        />
+        <link
+          rel="apple-touch-icon"
+          sizes="180x180"
+          href="https://imgur.com/SM5vVbR.jpeg"
         />
       </head>
       <body
