@@ -19,10 +19,10 @@ const About = () => {
   
   // Define image dimensions to prevent layout shifts
   const imageData = [
-    { src: "https://imgur.com/GXaT9MQ.jpeg", alt: "Couple", width: 600, height: 400 },
-    { src: "https://imgur.com/l5r5kCq.jpeg", alt: "prewedding", width: 600, height: 400 },
-    { src: "https://imgur.com/idU1A0a.jpeg", alt: "beach photography", width: 600, height: 400 },
-    { src: "https://imgur.com/03xDuBj.jpeg", alt: "beach shoot", width: 600, height: 400 }
+    { src: "https://imgur.com/GXaT9MQ.jpeg", alt: "Couple", width: 600, height: 700 },
+    { src: "https://imgur.com/l5r5kCq.jpeg", alt: "prewedding", width: 600, height: 700 },
+    { src: "https://imgur.com/idU1A0a.jpeg", alt: "beach photography", width: 600, height: 700 },
+    { src: "https://imgur.com/03xDuBj.jpeg", alt: "beach shoot", width: 600, height: 700 }
   ];
   
   return (

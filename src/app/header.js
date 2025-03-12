@@ -4,16 +4,24 @@
 
 import { FaFacebook, FaInstagram, FaBars } from "react-icons/fa";
 import { useState } from "react"; // import useState
-
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false); // State for menu toggle
   const router = useRouter();
+  const pathname = usePathname();
 
-  const portfolioredirect = () => {
-    router.push("/portfolio", undefined, { shallow: false, replace: true });
+  const handleNavigation = (e, section) => {
+    e.preventDefault();
+    if (pathname === '/') {
+      // If we're on the home page, just scroll to the section
+      document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      // If we're on another page, go to home page and then scroll to section
+      router.push(`/?section=${section}`);
+    }
   };
+
   return (
     <header className="bg-[rgb(0,0,3)] fixed top-0 w-full z-50">
       <nav className="container  mx-auto px-4 py-3 flex justify-between items-center">
@@ -30,13 +38,16 @@ const Header = () => {
         {/* Navigation Menu */}
         <ul className={`md:flex space-x-6 justify-end md:items-center md:static absolute top-16 left-0 w-full md:w-auto bg-black-800 md:bg-transparent md:flex-row flex-col md:flex-row ${isMenuOpen ? 'block' : 'hidden'}`}>
           <li>
-            <a href="/" className="text-white hover:text-gray-400">Home</a>
+            <a href="#home" onClick={(e) => handleNavigation(e, 'home')} className="text-white hover:text-gray-400">Home</a>
           </li>
           <li>
-            <a  href="/portfolio" className="text-white hover:text-gray-400">Portfolio</a>
+            <a href="/portfolio" className="text-white hover:text-gray-400">Portfolio</a>
           </li>
           <li>
-            <a href="#contact" className="text-white hover:text-gray-400">Contact</a>
+            <a href="#about" onClick={(e) => handleNavigation(e, 'about')} className="text-white hover:text-gray-400">About</a>
+          </li>
+          <li>
+            <a href="#contact" onClick={(e) => handleNavigation(e, 'contact')} className="text-white hover:text-gray-400">Contact</a>
           </li>
           <li>
             <a

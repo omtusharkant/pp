@@ -9,13 +9,14 @@ import About from "@/app/about"
 import Clientsreview from "@/app/clientsreview";
 import Contactus from "@/app/contactus";
 import Image from "next/image";
+import NavigationHandler from '@/app/components/ContactNavigationHandler';
 
 export default function Home() {
  
 
   return (
     <>
-      
+      <NavigationHandler />
       <main className="bg-black pt-16 custom-scrollbar">
       
       <Header />
